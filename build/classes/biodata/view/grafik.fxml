@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="433.0" prefWidth="953.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biodata.controller.grafikController">
+   <children>
+      <Label layoutX="710.0" layoutY="11.0" text="Detail Tabel" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableDetail" layoutX="710.0" layoutY="47.0" prefHeight="316.0" prefWidth="207.0">
+         <columns>
+            <TableColumn minWidth="0.0" prefWidth="8.0" />
+            <TableColumn fx:id="colDetailTahun" prefWidth="97.0" text="Tahun" />
+            <TableColumn fx:id="colDetailJumlah" prefWidth="85.0" text="Jumlah Orang" />
+         </columns>
+      </TableView>
+      <StackedBarChart fx:id="bar" categoryGap="20.0" layoutY="13.0" prefHeight="399.0" prefWidth="664.0" title="Grafik Tahun Kelahiran">
+         <xAxis>
+            <CategoryAxis fx:id="barX" animated="false" label="Tahun Kelahiran" side="BOTTOM" tickLabelFill="#3208da" tickLabelRotation="-45.0">
+               <tickLabelFont>
+                  <Font size="11.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="barY" label="Jumlah Orang" minorTickCount="1" side="LEFT" tickLabelFill="#698300" upperBound="10.0">
+               <tickLabelFont>
+                  <Font size="11.0" />
+               </tickLabelFont>
+            </NumberAxis>
+         </yAxis>
+      </StackedBarChart>
+      <Separator layoutX="688.0" orientation="VERTICAL" prefHeight="437.0" prefWidth="6.0" />
+      <Button fx:id="btnRefresh" layoutX="823.0" layoutY="377.0" mnemonicParsing="false" onAction="#aksiRefresh" prefHeight="25.0" prefWidth="94.0" text="Refresh" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="547.0" prefWidth="953.0" stylesheets="@../css/biodataCss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biodata.controller.biodataController">
+   <children>
+      <TabPane layoutY="85.0" prefHeight="462.0" prefWidth="953.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
+        <tabs>
+          <Tab fx:id="tabBiodata" text="Biodata">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Separator layoutX="676.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="436.0" prefWidth="6.0" />
+                        <Label layoutX="700.0" layoutY="18.0" text="Input Data" textFill="#000000c8" underline="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="700.0" layoutY="75.0" spacing="10.0">
+                           <children>
+                              <VBox layoutX="714.0" layoutY="165.0" spacing="3.0">
+                                 <children>
+                                    <Label layoutX="714.0" layoutY="165.0" text="ID" />
+                                    <TextField fx:id="txtId" layoutX="714.0" layoutY="182.0" prefHeight="25.0" prefWidth="228.0" promptText="Id Auto" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="712.0" layoutY="210.0" spacing="3.0">
+                                 <children>
+                                    <Label layoutX="714.0" layoutY="165.0" text="Nama" />
+                                    <TextField fx:id="txtNama" layoutX="714.0" layoutY="182.0" prefHeight="25.0" prefWidth="228.0" promptText="Nama Lengkap" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="3.0">
+                                 <children>
+                                    <Label layoutX="714.0" layoutY="165.0" text="Alamat" />
+                                    <TextArea fx:id="txtAlamat" prefHeight="62.0" prefWidth="228.0" promptText="Alamat Lengkap" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="3.0">
+                                 <children>
+                                    <Label layoutX="714.0" layoutY="165.0" text="Tanggal Lahir" />
+                                    <DatePicker fx:id="dateTanggal" prefHeight="25.0" prefWidth="228.0" promptText="Tanggal Lahir" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnSimpan" layoutX="824.0" layoutY="342.0" mnemonicParsing="false" onAction="#aksiSimpan" prefHeight="25.0" prefWidth="104.0" text="Simpan" />
+                        <TableView fx:id="tableData" layoutX="26.0" layoutY="25.0" onMouseClicked="#klikTableData" prefHeight="347.0" prefWidth="640.0">
+                          <columns>
+                            <TableColumn minWidth="8.0" prefWidth="9.0" />
+                            <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="colNama" prefWidth="148.0" text="Nama" />
+                              <TableColumn fx:id="colAlamat" prefWidth="173.0" text="Alamat" />
+                              <TableColumn fx:id="colTanggal" prefWidth="153.0" text="Tanggal Lahir" />
+                              <TableColumn fx:id="colAction" prefWidth="90.0" text="Action" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="txtCari" layoutX="26.0" layoutY="384.0" onKeyReleased="#aksiCari" prefHeight="25.0" prefWidth="296.0" promptText="Pencarian dengan Nama" />
+                        <Button fx:id="btnRefresh" layoutX="700.0" layoutY="342.0" mnemonicParsing="false" onAction="#aksiRefresh" prefHeight="25.0" prefWidth="104.0" text="Refresh" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabGrafikKelahiran" text="Grafik">
+            <content>
+              <AnchorPane fx:id="paneLoadGrafik" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <AnchorPane prefHeight="85.0" prefWidth="953.0" styleClass="headerPane">
+         <children>
+            <Text fill="#c6c6c6" layoutX="28.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Biodata" underline="true">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
